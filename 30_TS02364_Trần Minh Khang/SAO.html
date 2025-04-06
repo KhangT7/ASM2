@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Real</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        .header {
+            background-color: #1877f2;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .content {
+            margin-top: 60px;
+            width: 60%;
+        }
+        .post-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #1877f2;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .feed {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .post {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Facebook Real</div>
+    <div class="content">
+        <div class="post-box">
+            <input type="text" id="userName" placeholder="Nhập tên của bạn">
+            <textarea id="postContent" placeholder="Bạn đang nghĩ gì?"></textarea>
+            <button onclick="addPost()">Đăng bài</button>
+        </div>
+        <div class="feed" id="feed">
+            <div class="post">
+                <h3>Người dùng 1</h3>
+                <p>Bài viết đầu tiên trên Facebook Real!</p>
+            </div>
+            <div class="post">
+                <h3>Người dùng 2</h3>
+                <p>Hôm nay là một ngày tuyệt vời!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function addPost() {
+            let name = document.getElementById("userName").value.trim();
+            let content = document.getElementById("postContent").value.trim();
+            if (name === "" || content === "") return;
+            let post = document.createElement("div");
+            post.className = "post";
+            post.innerHTML = `<h3>${name}</h3><p>${content}</p>`;
+            document.getElementById("feed").prepend(post);
+            document.getElementById("userName").value = "";
+            document.getElementById("postContent").value = "";
+        }
+    </script>
+</body>
+</html>

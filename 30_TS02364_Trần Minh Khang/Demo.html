@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết Kế Layout</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 800px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header, .nav, .content, .footer {
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+        .header {
+            background-color: orange;
+            text-align: center;
+            padding: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .nav {
+            background-color: teal;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            color: white;
+            box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            display: flex;
+            gap: 5px;
+        }
+        .article {
+            background-color: yellowgreen;
+            flex: 2;
+            padding: 40px;
+            font-size: 22px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .aside {
+            background-color: red;
+            flex: 1;
+            padding: 40px;
+            font-size: 22px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: purple;
+            text-align: center;
+            padding: 30px;
+            font-size: 20px;
+            color: white;
+            border-radius: 10px;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">&lt;header&gt;</div>
+        <div class="nav">&lt;nav&gt;</div>
+        <div class="content">
+            <div class="article">&lt;article&gt;</div>
+            <div class="aside">&lt;aside&gt;</div>
+        </div>
+        <div class="footer">&lt;footer&gt;</div>
+    </div>
+</body>
+</html>
